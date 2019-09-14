@@ -1,3 +1,3 @@
 # vue-css-grid
-Sandbox:
-Playing with css grid and vue.
+I just started with vue.js
+I would like to implement css grid for my UI, but for now I have problem to understand how to implement events...
