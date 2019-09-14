@@ -1,8 +1,9 @@
 <template>
   <div>
     <div>
-      <br>&nbsp;&nbsp;&nbsp; 1.) Select element with mouse click (SELECTED ELEMENT HAS RED BORDER).
-      <BR/>&nbsp;&nbsp;&nbsp; 2.) Keyboard shortcuts for selected element:
+      <br>&nbsp;&nbsp;&nbsp; 1.)
+      <b>Select element with mouse click</b> (SELECTED ELEMENT HAS RED BORDER).
+      <BR/>&nbsp;&nbsp;&nbsp; 2.) Keyboard shortcuts (for selected element):
       <br>&nbsp;&nbsp;&nbsp;
       <b>CTRL + (UP, DOWN, LEFT, RIGHT)</b> - MOVE SELECTED ELEMENT
       <br>&nbsp;&nbsp;&nbsp;
@@ -35,6 +36,7 @@
         <div id="div5" class="div5 box" ref="div5" :style="div5_style"></div>
       </section>
     </div>
+    <div class="bgImg" style="width:100%; height:500px;"></div>
   </div>
 </template>
 
@@ -76,10 +78,6 @@ export default {
   },
   computed: {},
   methods: {
-    changeColor: function(event) {
-      this.$refs.div1.style.backgroundColor = this.rgba;
-      this.$refs.div5.style.backgroundColor = this.rgba;
-    },
     getWindowWidth(event) {
       console.log(document.documentElement.clientWidth);
       this.ww = document.documentElement.clientWidth;
@@ -91,7 +89,7 @@ export default {
   mounted() {
     window.addEventListener("resize", this.getWindowWidth);
     window.addEventListener("resize", this.getWindowHeight);
-    // sve ovo treba napisati ponovno............
+
     let selected = null;
     let wrapper = this.$refs.list;
 
@@ -158,7 +156,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("z-index")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       el.style.zIndex = zIndex + 1;
       console.log(window.getComputedStyle(el).getPropertyValue("z-index"));
@@ -176,7 +175,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("z-index")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       el.style.zIndex = zIndex - 1;
       console.log(window.getComputedStyle(el).getPropertyValue("z-index"));
@@ -187,14 +187,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridColumnEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-column-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnStart > 1) {
         el.style.gridColumnStart = gridColumnStart - 1;
@@ -212,14 +214,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridColumnEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-column-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnEnd < gridColumnMax) {
         el.style.gridColumnStart = gridColumnStart + 1;
@@ -233,14 +237,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridRowEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-row-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowStart > 1) {
         el.style.gridRowStart = gridRowStart - 1;
@@ -259,14 +265,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridRowEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-row-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowEnd < gridRowMax) {
         el.style.gridRowStart = gridRowStart + 1;
@@ -279,7 +287,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowStart > 1) {
         el.style.gridRowStart = gridRowStart - 1;
@@ -291,14 +300,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridRowEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-row-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowEnd - gridRowStart > 1) {
         el.style.gridRowStart = gridRowStart + 1;
@@ -315,7 +326,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowEnd < gridRowMax) {
         el.style.gridRowEnd = gridRowEnd + 1;
@@ -327,14 +339,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-row-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridRowEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-row-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridRowEnd - gridRowStart > 1) {
         el.style.gridRowEnd = gridRowEnd - 1;
@@ -346,7 +360,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnStart > 1) {
         el.style.gridColumnStart = gridColumnStart - 1;
@@ -358,14 +373,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridColumnEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-column-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnEnd - gridColumnStart > 1) {
         el.style.gridColumnStart = gridColumnStart + 1;
@@ -382,7 +399,8 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnEnd < gridColumnMax) {
         el.style.gridColumnEnd = gridColumnEnd + 1;
@@ -394,14 +412,16 @@ export default {
           .getComputedStyle(el)
           .getPropertyValue("grid-column-start")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       var gridColumnEnd = parseInt(
         window
           .getComputedStyle(el)
           .getPropertyValue("grid-column-end")
           .match(/\d/g)
-          .join(""),10
+          .join(""),
+        10
       );
       if (gridColumnEnd - gridColumnStart > 1) {
         el.style.gridColumnEnd = gridColumnEnd - 1;
